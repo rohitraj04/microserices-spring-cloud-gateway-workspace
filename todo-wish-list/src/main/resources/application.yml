@@ -1,0 +1,40 @@
+server:
+  port: 7002
+
+spring:
+  application:
+    name: TODO-ORDER-SERVICE
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/microdata?createIfNotExists=true
+    username: root
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+     hostname: localhost
+    
+#  h2:
+#    console:
+#      enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+#Setting the ribbon.eureka.enabled property to false explicitly disables the use of Eureka in Ribbon, 
+#payment:
+#  ribbon:
+#    eureka:
+#      enabled: false
+#    listOfServers: localhost:8001,localhost:8072,localhost:8073
+#    ServerListRefreshInterval: 2000
