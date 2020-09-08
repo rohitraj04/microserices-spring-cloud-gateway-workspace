@@ -1,0 +1,21 @@
+server:
+  port: 8001
+
+spring:  application:    name: PAYMENT-SERVICE1
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/microdata?createIfNotExists=true
+    username: root
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    
+eureka:  client:    register-with-eureka: true
+    fetch-registry: true
+    service-url:      defaultZone: http://localhost:8761/eureka/
+  instance:
+     hostname: localhost#  h2:#    console:#      enabled: true
+#      #      path: /h2-console
+   
